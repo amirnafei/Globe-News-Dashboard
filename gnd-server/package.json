@@ -1,0 +1,25 @@
+{
+  "name": "gnd-server",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.17.1",
+    "cors": "^2.8.4",
+    "fs": "0.0.1-security",
+    "mongoose": "^4.13.5",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-scripts": "1.0.17",
+    "twitter": "^1.7.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "Globe News Dashboard",
+  "main": "server.js",
+  "author": "Amir Nafei",
+  "license": "ISC"
+}
