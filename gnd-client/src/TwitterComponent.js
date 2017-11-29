@@ -1,10 +1,11 @@
 import React from 'react';
 import Twitter from 'twitter';
 import axios from 'axios';
+import config from './CONFIG.js';
 
 import { Button, Icon, Card, Row, Col } from 'react-materialize';
 
-const GND_SERVER_URL = 'http://localhost:8080';
+const GND_SERVER_URL = config.api;
 const TOP_TRENDS_PATH = '/top-trends';
 
 let content = '';

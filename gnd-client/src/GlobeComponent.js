@@ -2,6 +2,7 @@ import React from 'react';
 import Detector from './third-party/Detector';
 import TWEEN from './third-party/Tween';
 import { three as THREE } from 'three';
+import config from './CONFIG.js';
 
 import DAT from './globe';
 
@@ -57,7 +58,7 @@ class GlobeComponent extends React.Component {
 
 
             xhr = new XMLHttpRequest();
-            xhr.open('GET', `http://localhost:8080/data`, true);
+            xhr.open('GET', config.api + `/data`, true);
             xhr.onreadystatechange = function (e) {
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {

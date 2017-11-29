@@ -3,6 +3,7 @@
 /////////////////
 
 const mongoose = require('mongoose');
+const path = require("path");
 
 const Tweet = require('./models/Tweet');
 
@@ -24,7 +25,7 @@ connection.on('open', ()=>{
 
 
 const TWITTER_KEYS = require('./CONFIG');
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 const express = require('express');
 const cors = require('cors');
@@ -37,6 +38,8 @@ const Twitter = require('twitter');
 
 app.use(express.static('public'));
 app.use(cors());
+app.use(express.static(path.join(__dirname, '../gnd-client', 'build')));
+
 app.all('/', function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -158,6 +161,10 @@ app.get('/data', (request, response) => {
     .catch(error=>{
         return response.send(error);
     })
+})
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../gnd-client', 'build/index.html'));
 })
 
 app.listen(PORT, () => {
