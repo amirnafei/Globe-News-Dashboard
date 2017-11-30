@@ -23,7 +23,6 @@ DAT.Globe = function(container, opts) {
     return c;
   };
   var imgDir = opts.imgDir || '/globe/';
-  console.log('&&&&&&&&&&&&', imgDir)
 
   var Shaders = {
     'earth' : {
@@ -331,8 +330,8 @@ DAT.Globe = function(container, opts) {
         event.preventDefault();
         break;
       case 40:
-        //zoom(-100);
-        target.x++;
+        zoom(-100);
+        //target.x++;
         
         // goto(rotation.x, rotation.y);
         event.preventDefault();
@@ -341,7 +340,6 @@ DAT.Globe = function(container, opts) {
   }
 
   function onWindowResize( event ) {
-    console.log(event)
     camera.aspect = container.offsetWidth / container.offsetHeight;
     camera.updateProjectionMatrix();
     renderer.setSize( container.offsetWidth, container.offsetHeight );

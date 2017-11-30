@@ -30,7 +30,6 @@ class GlobeComponent extends React.Component {
             var container = this.globe;
             var globe = new DAT.Globe(container);
 
-            console.log(globe);
             var i, tweens = [];
 
             var settime = function (globe, t) {

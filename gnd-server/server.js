@@ -151,7 +151,7 @@ app.get('/data', (request, response) => {
         for (let i=0; i<tweets.length; i++) {
             data1.push(tweets[i].latitude);
             data1.push(tweets[i].longitude);
-            data1.push(tweets[i].volume/100000)
+            data1.push(tweets[i].volume/1000000)
         }
         let data2 = ['1995', data1];
 

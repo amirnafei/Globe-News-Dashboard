@@ -22,7 +22,6 @@ class TwitterComponent extends React.Component {
 
     componentDidUpdate(previousProps, previousState) {
         if (previousProps.latitude != this.props.latitude || previousProps.longitude != this.props.longitude) {
-            console.log('updating twitter comppnent')
             this.updateTweets();
         }        
     }
@@ -33,10 +32,8 @@ class TwitterComponent extends React.Component {
 
     updateTweets() {
         // const location = `/${this.props.location}`;
-        console.log(GND_SERVER_URL + TOP_TRENDS_PATH + `?latitude=${this.props.latitude}&longitude=${this.props.longitude}`);
         axios.get(GND_SERVER_URL + TOP_TRENDS_PATH + `?latitude=${this.props.latitude}&longitude=${this.props.longitude}`)
         .then(result=>{
-            console.log(result.data);
             this.setState({
                 trends: result.data,
             })
