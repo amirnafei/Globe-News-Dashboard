@@ -80,23 +80,23 @@ app.get('/top-trends', (req, res) => {
                     if (!error) {
                         tweets[0].trends.forEach(function(trend) {
                             if (trend.tweet_volume) {
-                                new Tweet({
-                                    country: 'COUNTRY SHOULD BE DYNAMIC',
-                                    countryCode: 'COUNTRY SHOULD BE DYNAMIC',
-                                    latitude: req.query.latitude,
-                                    longitude: req.query.longitude,
-                                    woeid: location.woeid,
-                                    name: trend.name,
-                                    url: trend.url,
-                                    volume: trend.tweet_volume,
-                                })
-                                .save()
-                                .then(savedTweet=>{
+                                // new Tweet({
+                                //     country: 'COUNTRY SHOULD BE DYNAMIC',
+                                //     countryCode: 'COUNTRY SHOULD BE DYNAMIC',
+                                //     latitude: req.query.latitude,
+                                //     longitude: req.query.longitude,
+                                //     woeid: location.woeid,
+                                //     name: trend.name,
+                                //     url: trend.url,
+                                //     volume: trend.tweet_volume,
+                                // })
+                                // .save()
+                                // .then(savedTweet=>{
                                     
-                                })
-                                .catch(error=>{
-                                    console.log(error);
-                                })
+                                // })
+                                // .catch(error=>{
+                                //     console.log(error);
+                                // })
                             }
                         })
                         return res.json(tweets[0].trends);
@@ -129,21 +129,28 @@ app.get('/top-trends', (req, res) => {
     
 // temporary endpoint to provide some static data
 app.get('/data', (request, response) => {
-    let data = JSON.parse(fs.readFileSync("/Users/amirnafei/threejs-test/globe/population909500-edited.json"));
-    // //    request.get('http://www.google.com', )
-    // let config = {
-    //     headers: { 'User-Agent': 'Amir' }
-    // };
+    let populationData = JSON.parse(fs.readFileSync("/Users/amirnafei/threejs-test/globe/population909500-1.json"));
 
-    // axios.get('http://www.woeidlookup.com/', config)
-    //     .then((result) => {
-    //         console.log(result.data);
-    //         response.send(result.data);
-    //     })
-    //     .catch((error) => {
-    //         console.log("catch");
-    //         response.send(error);
-    //     })
+    for (let i=0; i < populationData[0][1].length; i += 3) {
+        new Tweet({
+            country: '',
+            countryCode: '',
+            latitude: populationData[0][1][i],
+            longitude: populationData[0][1][i+1],
+            woeid: '',
+            name: 'name'+i,
+            url: ' ',
+            volume: .000,
+        })
+        .save()
+        .then(savedTweet=>{
+            
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+    }
+
     Tweet.find({
     })
     .then(tweets=>{
@@ -154,9 +161,8 @@ app.get('/data', (request, response) => {
             data1.push(tweets[i].volume/1000000)
         }
         let data2 = ['1995', data1];
-
         
-        return response.json(data.concat([data2]));
+        return response.json(populationData.concat([data2]));
     })
     .catch(error=>{
         return response.send(error);

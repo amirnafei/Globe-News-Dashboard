@@ -74,7 +74,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        
         <TwitterComponent locationHandler={this.updateLocation} latitude={this.state.currentLatitude} longitude={this.state.currentLongitude} location={this.state.currentCountry} />
         <GlobeComponent locationHandler={this.updateLocation} location={this.state.currentLocation} />
       </div>

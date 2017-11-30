@@ -6,12 +6,6 @@ import config from './CONFIG.js';
 
 import DAT from './globe';
 
-{/* <script type="text/javascript" src="../globe/third-party/Detector.js"></script>
-<script type="text/javascript" src="../globe/third-party/three.min.js"></script>
-<script type="text/javascript" src="../globe/third-party/Tween.js"></script>
-<script type="text/javascript" src="../globe/globe.js"></script> */}
-
-
 class GlobeComponent extends React.Component {
     constructor() {
         super();
@@ -26,7 +20,7 @@ class GlobeComponent extends React.Component {
             Detector.addGetWebGLMessage();
         } else {
 
-            var years = ['1990', '1995', '2000'];
+            var years = ['1990', '1995'];
             var container = this.globe;
             var globe = new DAT.Globe(container);
 
@@ -88,12 +82,11 @@ class GlobeComponent extends React.Component {
 
                 <div id="currentInfo">
                     <span id="year1990" className="year">Population</span>
-                    <span id="year1995" className="year">Weather</span>
-                    <span id="year2000" className="year">Tweets</span>
+                    <span id="year1995" className="year">Tweets</span>
                 </div>
 
                 <div id="title">
-                    Tweet Trends
+                    Globe News Dashboard
                 </div>
 
                 {/* <a id="ce" href="http://www.chromeexperiments.com/globe">

@@ -137,13 +137,14 @@ a:hover {
 /* Amir's CSS */
 .TwitterTrends {
   display: inline-block;
-  background-color: red;
+  background-color:black;
   vertical-align: top;
   min-width: 250px;
 }
 
 .TweetsFilter {
   width: 100%;
+  background-color: yellow
 }
 
 .LocationInfo {

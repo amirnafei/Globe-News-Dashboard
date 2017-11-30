@@ -68,7 +68,7 @@ class TwitterComponent extends React.Component {
                     <select className="TweetsFilter" onChange={(event)=>this.filterLocation(event.target.value)}>
                         {locationsJSX}
                     </select>
-                    <Button waves='light'>EDIT ME<Icon left>save</Icon></Button>
+                    {/* <Button waves='light'>EDIT ME<Icon left>save</Icon></Button> */}
                 </div>
                 <div className="TweetsList">
                     {trendsJSX}
