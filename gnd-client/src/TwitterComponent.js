@@ -58,7 +58,7 @@ class TwitterComponent extends React.Component {
         let locationsJSX = uniqueLocations.map(location => <option value={location} key={location}>{location}</option>);
         let trendsJSX = this.state.trends.map(trendItem => {
             return (
-                <li key={trendItem.name} onClick={()=>{window.open(trendItem.url, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150px, left=400px, width=600px, height=500px'); return false;}}>
+                <li key={trendItem.name} onClick={()=>{window.open(trendItem.url, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150px, left=400px, width=700px, height=500px'); return false;}}>
                     {trendItem.name}
                 </li>
             )

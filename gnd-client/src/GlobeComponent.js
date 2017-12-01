@@ -88,7 +88,7 @@ class GlobeComponent extends React.Component {
                 </div>
 
                 <div id="title">
-                    Globe News Dashboard
+                    GLOBE NEWS DASHBOARD
                 </div>
 
                 {/* <a id="ce" href="http://www.chromeexperiments.com/globe">

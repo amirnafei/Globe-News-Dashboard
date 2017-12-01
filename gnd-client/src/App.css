@@ -58,15 +58,15 @@ body {
 }
 
 #currentInfo {
-  width: 270px;
+  width: 360px;
   position: absolute;
   left: 20px;
-  top: 63px;
+  top: 90px;
 
   background-color: rgba(0,0,0,0.2);
 
   border-top: 1px solid rgba(255,255,255,0.4);
-  padding: 10px;
+  padding: 20px;
 }
 
 a {
@@ -85,14 +85,14 @@ a:hover {
 #title {
   position: absolute;
   top: 24px;
-  width: 270px;
+  width: 360px;
   left: 20px;
   background-color: rgba(0,0,0,0.2);
   border-radius: 3px;
-  font: 22px Helvetica;
+  font: 26px Helvetica;
   color: #2993fb;
   font-weight: bold;
-  padding: 10px;
+  padding: 20px 0px;
 }
 
 .year {
@@ -134,7 +134,7 @@ a:hover {
   background-color: green;
   vertical-align: top;
   text-align: center;
-  padding-right: 20%;
+  padding-right:10%;
 }
 
 /* Amir's CSS */
@@ -142,7 +142,7 @@ a:hover {
   display: inline-block;
   background-color:black;
   vertical-align: top;
-  min-width: 320px;
+  min-width: 400px;
 }
 
 .TweetsFilter {
@@ -151,7 +151,7 @@ a:hover {
 
 .LocationInfo {
   height: 20vh;
-  min-height: 150px;
+  min-height: 200px;
 }
 
 .TweetsList {
@@ -183,3 +183,6 @@ li:hover {
   color:black;
 }
 
+h1 {
+  font-size: 30px
+}
