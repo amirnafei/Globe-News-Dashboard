@@ -24,12 +24,13 @@ class App extends Component {
   }
 
   componentWillMount() {
-    axios.get(GND_SERVER_URL + TOP_TRENDS_LOCATIONS_PATH + `?latitude=${this.props.latitude}&longitude=${this.props.longitude}`)
+    console.log((GND_SERVER_URL + TOP_TRENDS_LOCATIONS_PATH + `?latitude=${this.props.latitude}&longitude=${this.props.longitude}`))
+    axios.get(TOP_TRENDS_LOCATIONS_PATH + `?latitude=${this.props.latitude}&longitude=${this.props.longitude}`)
     .then(result=>{
       console.log(result.data);
-        // this.setState({
-        //     trends: result.data,
-        // })
+        this.setState({
+            trends: result.data,
+        })
     })
     .catch(error=>{
         console.log(error);
@@ -74,8 +75,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TwitterComponent locationHandler={this.updateLocation} latitude={this.state.currentLatitude} longitude={this.state.currentLongitude} location={this.state.currentCountry} />
-        <GlobeComponent locationHandler={this.updateLocation} location={this.state.currentLocation} />
+        <TwitterComponent locationHandler={this.updateLocation} latitude={this.state.currentLatitude} longitude={this.state.currentLongitude} location={this.state.currentLocation} />
+        <GlobeComponent locationHandler={this.updateLocation} location={this.state.currentCountry} />
       </div>
     );
   }

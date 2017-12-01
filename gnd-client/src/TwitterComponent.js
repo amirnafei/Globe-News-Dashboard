@@ -32,7 +32,7 @@ class TwitterComponent extends React.Component {
 
     updateTweets() {
         // const location = `/${this.props.location}`;
-        axios.get(GND_SERVER_URL + TOP_TRENDS_PATH + `?latitude=${this.props.latitude}&longitude=${this.props.longitude}`)
+        axios.get(TOP_TRENDS_PATH + `?latitude=${this.props.latitude}&longitude=${this.props.longitude}`)
         .then(result=>{
             this.setState({
                 trends: result.data,
@@ -58,13 +58,14 @@ class TwitterComponent extends React.Component {
         let locationsJSX = uniqueLocations.map(location => <option value={location} key={location}>{location}</option>);
         let trendsJSX = this.state.trends.map(trendItem => {
             return (
-                <li key={trendItem.name}><a target="_blank" href={trendItem.url}>{trendItem.name}</a></li>
+                <li key={trendItem.name} onClick={()=>{window.open(trendItem.url, 'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, top=150px, left=400px, width=600px, height=500px'); return false;}}>
+                    {trendItem.name}
+                </li>
             )
         })
         return (
             <div className="TwitterTrends">
                 <div className="LocationInfo">
-                    <h1>{this.props.location}</h1>
                     <select className="TweetsFilter" onChange={(event)=>this.filterLocation(event.target.value)}>
                         {locationsJSX}
                     </select>

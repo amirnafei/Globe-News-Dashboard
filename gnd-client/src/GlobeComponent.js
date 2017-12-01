@@ -75,10 +75,12 @@ class GlobeComponent extends React.Component {
         return (
             <div className="GlobeContainer">
                 <div ref={ref=>this.globe=ref}></div>
+                
 
-                {/* <div id="info">
-                    <strong><a href="http://www.chromeexperiments.com/globe">WebGL Globe</a></strong> <span className="bull">&bull;</span> Created by the Google Data Arts Team <span className="bull">&bull;</span> Data acquired from <a href="http://sedac.ciesin.columbia.edu/gpw/">SEDAC</a>
-                </div> */}
+                <div id="info">
+                    <h1>{this.props.location}</h1>
+                    {/* <strong><a href="http://www.chromeexperiments.com/globe">WebGL Globe</a></strong> <span className="bull">&bull;</span> Created by the Google Data Arts Team <span className="bull">&bull;</span> Data acquired from <a href="http://sedac.ciesin.columbia.edu/gpw/">SEDAC</a> */}
+                </div>
 
                 <div id="currentInfo">
                     <span id="year1990" className="year">Population</span>

@@ -387,6 +387,7 @@ DAT.Globe = function(container, opts) {
     return this._time || 0;
   });
 
+  
   this.__defineSetter__('time', function(t) {
     var validMorphs = [];
     var morphDict = this.points.morphTargetDictionary;
